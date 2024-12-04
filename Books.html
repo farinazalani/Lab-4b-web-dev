@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Books Data</title>
+</head>
+<body>
+  <h1>Books Data</h1>
+  <ul id="book-details"></ul>
+
+  <script>
+    const books = [
+        {
+
+            "title": "Andainya Takdir",
+            "author": "Siti Rosmizah",
+            "publicationYear": 2016,
+            "genres": ["Drama", "Romance", "Malay Literature"]
+
+        },
+        {    
+        
+            "title": "Andai Itu Takdirnya",
+            "author": "Siti Rosmizah",
+            "publicationYear": 2007,
+            "genres": ["Drama", "Romance", "Malay Literature"]
+
+        }
+    ];
+    const bookDetails = document.getElementById('book-details');
+    bookDetails.innerHTML = `
+      <li>Title of the first book: ${books[0].title}</li>
+      <li>Author of the second book: ${books[1].author}</li>
+      <li>Genres of all books: ${books.flatMap(book => book.genres).join(', ')}</li>
+    `;
+  </script>
+</body>
+</html>
